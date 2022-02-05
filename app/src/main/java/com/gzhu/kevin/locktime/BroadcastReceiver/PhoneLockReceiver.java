@@ -48,8 +48,6 @@ public class PhoneLockReceiver extends BroadcastReceiver {
   private final static PhoneLockReceiver PHONE_LOCK_RECEIVER_INSTANCE = new PhoneLockReceiver();
 
 
-
-
   public static PhoneLockReceiver getInstance() {
     return PHONE_LOCK_RECEIVER_INSTANCE;
   }
@@ -87,9 +85,9 @@ public class PhoneLockReceiver extends BroadcastReceiver {
           secondsToHoursMinutesSeconds(context, durationSeconds, stringBuilder);
 //          通知改成悬浮窗
 //          NotificationHelper.pushNotification(context, stringBuilder.toString());
- //        new ShowFloatWindowNotificationThread(context).start();
-          ShowFloatWindowNotification(context,stringBuilder.toString());
-          Log.d(TAG, "onReceive: "+Thread.currentThread().getName());
+          //        new ShowFloatWindowNotificationThread(context).start();
+          ShowFloatWindowNotification(context, stringBuilder.toString());
+          Log.d(TAG, "onReceive: " + Thread.currentThread().getName());
         }
 
         System.out.println(durationSeconds);
@@ -150,27 +148,27 @@ public class PhoneLockReceiver extends BroadcastReceiver {
         Toast.makeText(context, "lockTime : 未开启悬浮窗权限", Toast.LENGTH_SHORT).show();
       }
     } else {
-      realShowFloatWindow(context,string);
+      realShowFloatWindow(context, string);
     }
 
   }
-  private void realShowFloatWindow(Context context,String string){
+
+  private void realShowFloatWindow(Context context, String string) {
     // 显示悬浮窗, 3s后移除
     WindowManager windowManager = (WindowManager) context.getSystemService(context.WINDOW_SERVICE);
     int displayHeight = windowManager.getDefaultDisplay().getHeight();
     int displayWidth = windowManager.getDefaultDisplay().getWidth();
 
 
-
-
-    if (textView == null) {
-      textView = new TextView(context);
-    } else {
-      // remove textView and add it again
-      if(textView.isAttachedToWindow()){
-        windowManager.removeView(textView);
+    // 原来没有textview, 新建一个
+    // 原来有textview, 立刻不显示, 新建一个, 之前的会有对应的线程remove它
+    if (textView != null) {
+      if (textView.isAttachedToWindow()) {
+        textView.setVisibility(View.INVISIBLE);
       }
     }
+    textView = new TextView(context);
+
 //    LinearLayoutCompat linearLayoutCompat = new LinearLayoutCompat(context);
 
 //    textView.setBackgroundColor(context.getResources().getColor(R.color.ios_system_blue));
@@ -182,7 +180,7 @@ public class PhoneLockReceiver extends BroadcastReceiver {
 //    textView.setY(displayHeight/2-textView.getMeasuredHeight());
 
     textView.setGravity(View.TEXT_ALIGNMENT_CENTER);
-    textView.setPadding(10,10,10,10);
+    textView.setPadding(10, 10, 10, 10);
     textView.setBackground(context.getResources().getDrawable(R.drawable.float_window_background));
 
 //    linearLayoutCompat.setOrientation(LinearLayoutCompat.VERTICAL);
@@ -197,13 +195,13 @@ public class PhoneLockReceiver extends BroadcastReceiver {
       layoutParams.type = WindowManager.LayoutParams.TYPE_PHONE;
     }
 
-    layoutParams.x= 0;
-    layoutParams.y=-(displayHeight/2);
+    layoutParams.x = 0;
+    layoutParams.y = -(displayHeight / 2);
     layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT;
     layoutParams.width = ViewGroup.LayoutParams.WRAP_CONTENT;
 
     layoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
-    windowManager.addView(textView,layoutParams);
+    windowManager.addView(textView, layoutParams);
     new RemoveFloatWindowThread(textView, windowManager).start();
 //    try {
 //      Thread.sleep(3000);
@@ -230,12 +228,18 @@ public class PhoneLockReceiver extends BroadcastReceiver {
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
-      floatWindowView.post(()->{
-        windowManager.removeView(floatWindowView);
+      floatWindowView.post(() -> {
+        try {
+          windowManager.removeView(floatWindowView);
+        } catch (Exception e) {
+          e.printStackTrace();
+          Log.d(TAG, "run: remove textview exception");
+        }
       });
     }
 
   }
+
   class InsertDatabaseThread extends Thread {
     long screenOffTime;
     long unlockTime;
@@ -254,7 +258,7 @@ public class PhoneLockReceiver extends BroadcastReceiver {
     }
   }
 
-String TAG="PhoneLockReceiver";
+  String TAG = "PhoneLockReceiver";
 
 }
 

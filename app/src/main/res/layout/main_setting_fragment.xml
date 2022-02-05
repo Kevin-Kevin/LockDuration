@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_root_linear_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ios_system_background_gray"
+
+    >
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/stroke_background"
+        android:gravity="center"
+        android:orientation="vertical">
+        <!--    <Button-->
+        <!--        android:layout_width="200dp"-->
+        <!--        android:layout_height="48dp" />-->
+        <!--    <androidx.appcompat.widget.LinearLayoutCompat-->
+        <!--        android:orientation="horizontal"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="60dp"-->
+        <!--        android:background="@drawable/stroke_background"-->
+        <!--        android:layout_margin="10dp">-->
+        <!--        <TextView-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:layout_weight="5"-->
+        <!--            android:text="是否已取消电池优化"-->
+        <!--            android:gravity="center"-->
+        <!--            android:textSize="16sp"-->
+        <!--            />-->
+        <!--        <Button-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:layout_weight="1"-->
+        <!--            android:background="@drawable/alpha_background_red"-->
+        <!--            android:layout_margin="10dp"-->
+        <!--            />-->
+        <!--    </androidx.appcompat.widget.LinearLayoutCompat>-->
+        <!--    <androidx.appcompat.widget.LinearLayoutCompat-->
+        <!--        android:orientation="horizontal"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="60dp"-->
+        <!--        android:background="@drawable/stroke_background"-->
+        <!--        android:layout_margin="10dp">-->
+        <!--        <TextView-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:layout_weight="5"-->
+        <!--            android:text="是否已锁定"-->
+        <!--            android:gravity="center"-->
+        <!--            android:textSize="16sp"-->
+        <!--            />-->
+        <!--        <Button-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:layout_weight="1"-->
+        <!--            android:layout_margin="10dp"/>-->
+        <!--    </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+        <RelativeLayout style="@style/SettingFragmentRelativeLayoutStyle">
+
+            <TextView
+
+                android:id="@+id/show_notification_text_view"
+                style="@style/TextViewStyle"
+                android:gravity="center"
+                android:text="解锁时显示锁定时长" />
+
+            <Switch
+                android:id="@+id/show_notification_switch"
+                style="@style/SettingFragmentSwitch"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center" />
+
+
+        </RelativeLayout>
+
+        <View style="@style/SeptalLineViewStyle" />
+
+        <RelativeLayout style="@style/SettingFragmentRelativeLayoutStyle">
+
+            <TextView
+                android:id="@+id/after_how_many_time_show_text_view"
+                style="@style/TextViewStyle"
+                android:gravity="center"
+                android:text="锁定多久之后显示锁定时长" />
+
+            <EditText
+                android:id="@+id/after_how_many_time_show_edit_text"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:minWidth="50dp"
+                android:singleLine="true"
+                android:text="0"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <View style="@style/SeptalLineViewStyle" />
+
+        <RelativeLayout style="@style/SettingFragmentRelativeLayoutStyle">
+
+            <TextView
+                android:id="@+id/battery_optimization_text_view"
+                style="@style/TextViewStyle"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="取消电池优化" />
+
+            <Switch
+                android:id="@+id/battery_optimization_switch"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center" />
+        </RelativeLayout>
+
+        <View style="@style/SeptalLineViewStyle" />
+
+        <RelativeLayout style="@style/SettingFragmentRelativeLayoutStyle">
+
+            <TextView
+                android:id="@+id/float_window_permisson_text_view"
+                style="@style/TextViewStyle"
+
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                android:text="开启自启动权限" />
+
+            <Switch
+                android:id="@+id/self_turn_on_switch"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center" />
+        </RelativeLayout>
+
+        <View style="@style/SeptalLineViewStyle" />
+
+        <RelativeLayout style="@style/SettingFragmentRelativeLayoutStyle">
+
+            <TextView
+                android:id="@+id/overlay_permission_text_view"
+                style="@style/TextViewStyle"
+
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                android:text="开启悬浮窗权限" />
+
+            <Switch
+                android:id="@+id/overlay_permission_switch"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center" />
+        </RelativeLayout>
+
+        <View style="@style/SeptalLineViewStyle" />
+
+        <RelativeLayout
+            android:id="@+id/set_float_window_location_relative_layout"
+            style="@style/SettingFragmentRelativeLayoutStyle">
+
+            <TextView
+                android:id="@+id/set_float_window_location_text_view"
+                style="@style/TextViewStyle"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                android:text="设置悬浮窗位置" />
+
+            <ImageView
+                android:id="@+id/set_float_window_location_"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:src="@drawable/right_arrow" />
+        </RelativeLayout>
+        <View style="@style/SeptalLineViewStyle" />
+            <TextView
+android:textColor="@color/ios_text_grey"
+                android:id="@+id/fragment_setting_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:text="@string/tip"
+                android:textAlignment="viewStart"
+                android:textSize="16sp" />
+
+       <!--    <Button-->
+        <!--        android:id="@+id/fragment_test_notification_button"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:text="点击开启功能" />-->
+
+        <!--    <Switch-->
+        <!--        android:id="@+id/main_notification_float_switch"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:text="通知是否弹窗"-->
+        <!--        android:layout_margin="10dp"-->
+        <!--        android:checked="true"-->
+        <!--        />-->
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</FrameLayout>

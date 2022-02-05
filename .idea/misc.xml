@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/kevin/AndroidStudioProjects/lockTime/app/src/main/res/drawable-v24/alpha_background_green.xml" value="0.24635416666666668" />
+        <entry key="..\:/Users/kevin/AndroidStudioProjects/lockTime/app/src/main/res/drawable-v24/alpha_background_grey.xml" value="0.24635416666666668" />
+        <entry key="..\:/Users/kevin/AndroidStudioProjects/lockTime/app/src/main/res/drawable-v24/alpha_background_red.xml" value="0.24635416666666668" />
+        <entry key="..\:/Users/kevin/AndroidStudioProjects/lockTime/app/src/main/res/drawable-v24/view_pager_background_blue.xml" value="0.24635416666666668" />
+        <entry key="..\:/Users/kevin/AndroidStudioProjects/lockTime/app/src/main/res/drawable-v24/view_pager_background_grey.xml" value="0.24635416666666668" />
+        <entry key="..\:/Users/kevin/AndroidStudioProjects/lockTime/app/src/main/res/drawable/edge.xml" value="0.1953125" />
+        <entry key="..\:/Users/kevin/AndroidStudioProjects/lockTime/app/src/main/res/drawable/float_window_background.xml" value="0.2786458333333333" />
+        <entry key="..\:/Users/kevin/AndroidStudioProjects/lockTime/app/src/main/res/drawable/stroke_background.xml" value="0.3045246568378241" />
+        <entry key="..\:/Users/kevin/AndroidStudioProjects/lockTime/app/src/main/res/layout/activity_main.xml" value="0.328125" />
+        <entry key="..\:/Users/kevin/AndroidStudioProjects/lockTime/app/src/main/res/layout/fragment_for_main_view_pager2.xml" value="0.22604166666666667" />
+        <entry key="..\:/Users/kevin/AndroidStudioProjects/lockTime/app/src/main/res/layout/fragment_for_notify_lock_time.xml" value="0.1" />
+        <entry key="..\:/Users/kevin/AndroidStudioProjects/lockTime/app/src/main/res/layout/main_about_app_fragment.xml" value="0.22604166666666667" />
+        <entry key="..\:/Users/kevin/AndroidStudioProjects/lockTime/app/src/main/res/layout/main_data_list_fragment.xml" value="0.264" />
+        <entry key="..\:/Users/kevin/AndroidStudioProjects/lockTime/app/src/main/res/layout/main_fragment_about_app.xml" value="0.22604166666666667" />
+        <entry key="..\:/Users/kevin/AndroidStudioProjects/lockTime/app/src/main/res/layout/main_fragment_about_me.xml" value="0.22604166666666667" />
+        <entry key="..\:/Users/kevin/AndroidStudioProjects/lockTime/app/src/main/res/layout/main_setting_fragment.xml" value="0.33" />
+        <entry key="..\:/Users/kevin/AndroidStudioProjects/lockTime/app/src/main/res/layout/recycler_view_item_layout.xml" value="0.22604166666666667" />
+        <entry key="..\:/Users/kevin/AndroidStudioProjects/lockTime/app/src/main/res/mipmap-anydpi-v26/app_icon.xml" value="0.2604166666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.33" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

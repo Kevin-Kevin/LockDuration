@@ -133,23 +133,26 @@
 
         <View style="@style/SeptalLineViewStyle" />
 
-        <RelativeLayout style="@style/SettingFragmentRelativeLayoutStyle">
+        <RelativeLayout
+            android:id="@+id/self_turn_on_relative_layout"
+            style="@style/SettingFragmentRelativeLayoutStyle">
 
             <TextView
-                android:id="@+id/float_window_permisson_text_view"
+                android:id="@+id/self_turn_on_text_view"
                 style="@style/TextViewStyle"
 
                 android:layout_alignParentLeft="true"
                 android:gravity="center"
                 android:text="开启自启动权限" />
-
-            <Switch
-                android:id="@+id/self_turn_on_switch"
+            <ImageView
+                android:id="@+id/self_turn_on_image_view"
                 android:layout_width="50dp"
-                android:layout_height="wrap_content"
+                android:layout_height="25dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:gravity="center" />
+                android:gravity="center"
+                android:src="@drawable/right_arrow" />
+
         </RelativeLayout>
 
         <View style="@style/SeptalLineViewStyle" />

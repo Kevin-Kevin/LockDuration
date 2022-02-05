@@ -34,6 +34,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.gzhu.kevin.locktime.BroadcastReceiver.PhoneLockReceiver;
 import com.gzhu.kevin.locktime.R;
 import com.gzhu.kevin.locktime.Service.MyRegisterService;
@@ -156,10 +157,13 @@ public class SettingFragment extends Fragment {
       }else {
       }
     });
-// TODO: 开关改成箭头
-// set auto start switch
-    binding.selfTurnOnSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
 
+// set auto start permission
+    binding.selfTurnOnRelativeLayout.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        Snackbar.make(v,"请开启应用自启权限, 否则应用无法正常工作",3000).show();
+      }
     });
 // set overlay permission switch
     boolean haveOverlayPermisson;

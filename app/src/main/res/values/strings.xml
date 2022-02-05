@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">lockTime</string>
+    <string name="app_name">锁定时长</string>
     <string name="tip">1. 请设置电池不优化以及开启所有自启权限\n\n2. 多任务界面中锁定此应用\n\n3. 请在上方设置手机锁屏多少秒后通知</string>
     <string name="title_activity_set_float_window_location">SetFloatWindowLocationActivity</string>
     <!-- Strings used for fragments for navigation -->

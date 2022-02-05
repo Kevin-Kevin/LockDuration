@@ -9,7 +9,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:textSize="16sp"
         android:text="
+        此app无联网功能\n\n
+        不会收集和使用个人信息\n\n
         对本app有什么建议请在酷安私信我
 " />
 
